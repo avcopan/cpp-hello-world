@@ -1,0 +1,9 @@
+language: cpp
+
+os: linux
+
+compiler: gcc
+
+script:
+    - g++ greet.cpp -o greet.exe
+    - ./greet.exe
