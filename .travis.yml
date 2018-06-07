@@ -7,6 +7,10 @@ install:
     - sudo apt-get install cppcheck
 
 script:
-    - g++ greet.cpp -o greet.exe
+    - g++ -coverage greet.cpp -o greet.exe
     - ./greet.exe
     - cppcheck --error-exitcode=1 greet.cpp
+    - gcov greet.cpp
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
