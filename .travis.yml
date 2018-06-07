@@ -2,8 +2,11 @@ language: cpp
 
 os: linux
 
-compiler: gcc
+install:
+    - sudo apt-get install gcc
+    - sudo apt-get install cppcheck
 
 script:
     - g++ greet.cpp -o greet.exe
     - ./greet.exe
+    - cppcheck greet.cpp
