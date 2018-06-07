@@ -9,4 +9,4 @@ install:
 script:
     - g++ greet.cpp -o greet.exe
     - ./greet.exe
-    - cppcheck greet.cpp
+    - cppcheck --error-exitcode=1 greet.cpp
